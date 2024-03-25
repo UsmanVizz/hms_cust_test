@@ -1,0 +1,62 @@
+import { Component, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Router, RouterModule } from "@angular/router";
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from "@angular/forms";
+import { AuthServiceService } from "src/app/services/auth-service.service";
+import { ToastrService } from "ngx-toastr";
+
+@Component({
+  selector: "app-customer-login-page",
+  templateUrl: "./customer-login-page.component.html",
+  styleUrls: ["./customer-login-page.component.scss"],
+  standalone: true,
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+})
+export class CustomerLoginPageComponent implements OnInit {
+  userLogin: FormGroup;
+
+  user = {
+    userEmail: "",
+    userPwd: "",
+  };
+
+  alreadyLoggedIn: boolean = false;
+  submitted: boolean = false; // Flag to track if form has been submitted
+
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private authService: AuthServiceService,
+    private toastr: ToastrService
+  ) {
+    this.userLogin = this.fb.group({
+      userEmail: new FormControl("", [Validators.required, Validators.email]),
+      userPwd: new FormControl("", [Validators.required]),
+    });
+  }
+
+  ngOnInit(): void {}
+
+  loggedIn() {
+    this.authService.userLoggedIn(this.userLogin.value).subscribe({
+      next: (response) => {
+        console.log("Server response:", response);
+        this.toastr.success(`${response.userName} is successfully logged in`);
+
+        this.authService.login(response.userId, response.userName);
+        this.userLogin.reset();
+      },
+      error: (error) => {
+        // console.error("Server error:", error);
+        this.toastr.error("Invalid Email or Password");
+      },
+    });
+  }
+}

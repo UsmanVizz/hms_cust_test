@@ -1,0 +1,109 @@
+<main class="container-fluid">
+  <div
+    class="d-flex flex-column justify-content-center align-items-center booking-container"
+  >
+    <div class="p-marriage-title">
+      <span class="marriage-title">Delicious</span> Food And
+      <span class="marriage-title">Expert Advice</span>
+    </div>
+    <div
+      class="m-description mt-2 container col-xxl-7 px-4 py-3 d-flex justify-content-center text-center"
+    >
+      Whether you're a fan of dreamy white weddings or care-free bohemian
+      celebrations, you'll find tips, tricks, and inspiration to guide you
+      through every stage of your wedding manager. Who better to guide you than
+      some of our illustrious experts like Mary Berry and Bobbi Brown?
+    </div>
+    <button class="view-btn view-btn-active mb-4">Get Started</button>
+    <div class="d-flex flex-column">
+      <div class="d-flex justify-content-between align-items-center gap-5">
+        <!-- <div class="p-marriage-title">
+          Find the best
+          <span class="marriage-title">Catering</span> in Pakistan
+        </div> -->
+        <div class="d-flex gap-3">
+          <button class="state-btn">Karachi</button>
+          <button class="state-btn">Lahore</button>
+          <button class="state-btn">Rawalpindi</button>
+          <button class="state-btn">Islamabad</button>
+        </div>
+      </div>
+    </div>
+    <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Calendar Booking Container !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div
+      class="d-flex justify-content-around mt-5 mb-4 gap-4 flex-wrap card-container"
+    >
+      <app-calendar-carousel></app-calendar-carousel>
+      <app-calendar-carousel></app-calendar-carousel>
+    </div>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <button class="view-btn m-3">View All</button>
+  </div>
+</main>
+
+<article class="bg-image">
+  <div class="bg-image-color">
+    <div class="container col-xxl-8 px-4 py-5 d-flex justify-content-center">
+      <div
+        class="d-flex justify-content-center align-items-center flex-wrap-reverse article"
+      >
+        <div class="d-flex flex-column align-items-baseline col-xl-6">
+          <div class="p-marriage-title">
+            <span class="marriage-title testimonials-title">TESTIMONIALS</span>
+          </div>
+          <p class="text-light fw-bold story-title">
+            Capturing Love: Your Wedding Day Storyteller
+          </p>
+          <div class="d-flex flex-column para-desc">
+            <p class="lead fw-normal text-light f-size">
+              "Whether you're a fan of dreamy white weddings or care-free
+              bohemian celebrations, you'll find tips, tricks, and inspiration
+              to guide you through every stage of your wedding manager. Who
+              better to guide you than some of our illustrious experts like Mary
+              Berry and Bobbi Brown?""
+            </p>
+            <p class="fw-normal name-title">ADELINE + MARVIN</p>
+            <div class="d-flex justify-content-between">
+              <p class="date-day text-light">14, April, 1999</p>
+
+              <div
+                class="card flex justify-content-center bg-transparent border-0"
+              >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="star-rating">
+                        <span
+                          class="fa"
+                          *ngFor="let star of [1, 2, 3, 4, 5]"
+                          [ngClass]="{
+                            'fa-star': rating >= star,
+                            'fa-star-o': rating < star
+                          }"
+                          (click)="setRating(star)"
+                        ></span>
+                        <input
+                          type="hidden"
+                          name="whatever1"
+                          class="rating-value"
+                          [value]="rating"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <img
+            src="../../../../assets/images/image 16.png"
+            alt="Image Preview"
+            class="men-image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
