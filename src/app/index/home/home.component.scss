@@ -22,12 +22,11 @@ main {
   background-position: center;
   background-attachment: local;
   background-origin: border-box;
-  padding-top: 50px;
   padding-bottom: 50px;
 }
 
 .accent-container {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .h2-f-t {
@@ -131,8 +130,9 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  padding: 29px 31px;
+  padding: 25px 8px;
   border-radius: 66px;
+  box-shadow: 1px 1px 5px 0px #00000052;
 }
 
 .messageInput {

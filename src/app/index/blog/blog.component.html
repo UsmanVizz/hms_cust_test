@@ -1,0 +1,39 @@
+<main class="container">
+  <div class="d-flex flex-column">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center mb-5 pb-4"
+    >
+      <h3 class="h3-f-t text-capitalize">blog</h3>
+      <p class="col-md-5 text-center lh-base fw-medium text-black-50">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeiusm
+        tempor incididunt
+      </p>
+    </div>
+    <div class="">
+      <section class="photo-gallery py-4 py-xl-5">
+        <div class="container">
+          <div
+            class="row gx-3 gy-3 row-cols-1 row-cols-md-2 row-cols-xl-3 photos"
+            data-bss-baguettebox=""
+          >
+            <div
+              class="col item"
+              *ngFor="let data of imageData"
+              data-aos="flip-left"
+            >
+              <img class="img-fluid rounded-4" [src]="data.imageUrl" />
+              <span class="date-container">{{ data.date }}</span>
+              <div class="title-decs__container">
+                <h4 class="h4-f-t">{{ data.title }}</h4>
+                <p>{{ data.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div>
+    <app-check-out></app-check-out>
+  </div>
+</main>

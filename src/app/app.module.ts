@@ -11,6 +11,44 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { HttpClientModule } from "@angular/common/http";
 import { ToastrModule } from "ngx-toastr";
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderRouterModule,
+  NgxUiLoaderConfig,
+  NgxUiLoaderHttpModule,
+} from "ngx-ui-loader";
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: "rgba(255,255,255,0)",
+  bgsOpacity: 0.1,
+  bgsPosition: "bottom-right",
+  bgsSize: 20,
+  bgsType: "ball-spin-clockwise",
+  blur: 0,
+  delay: 0,
+  fastFadeOut: true,
+  fgsColor: "rgba(255,255,255,0)",
+  fgsPosition: "center-center",
+  fgsSize: 20,
+  fgsType: "ball-spin-clockwise",
+  gap: 10,
+  logoPosition: "center-center",
+  logoSize: 120,
+  logoUrl: "",
+  masterLoaderId: "master",
+  overlayBorderRadius: "0",
+  overlayColor: "rgba(40,40,40,0)",
+  pbColor: "#0096ff",
+  pbDirection: "ltr",
+  pbThickness: 4,
+  hasProgressBar: true,
+  text: "",
+  textColor: "#FFFFFF",
+  textPosition: "center-center",
+  maxTime: -1,
+  minTime: 300,
+};
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,9 +61,12 @@ import { ToastrModule } from "ngx-toastr";
     MatDatepickerModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
-      // preventDuplicates: true,
+      timeOut: 5000,
+      preventDuplicates: true,
     }),
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule,
   ],
   bootstrap: [AppComponent],
 })

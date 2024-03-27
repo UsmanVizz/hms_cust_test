@@ -22,13 +22,15 @@ import { ToastrService } from "ngx-toastr";
 export class CustomerLoginPageComponent implements OnInit {
   userLogin: FormGroup;
 
+  userName: string | null = null;
+
   user = {
     userEmail: "",
     userPwd: "",
   };
 
   alreadyLoggedIn: boolean = false;
-  submitted: boolean = false; // Flag to track if form has been submitted
+  submitted: boolean = false;
 
   constructor(
     private router: Router,
@@ -48,10 +50,10 @@ export class CustomerLoginPageComponent implements OnInit {
     this.authService.userLoggedIn(this.userLogin.value).subscribe({
       next: (response) => {
         console.log("Server response:", response);
-        this.toastr.success(`${response.userName} is successfully logged in`);
-
         this.authService.login(response.userId, response.userName);
         this.userLogin.reset();
+        this.router.navigate(["/home"]);
+        this.toastr.success(`${response.userName} is successfully logged in`);
       },
       error: (error) => {
         // console.error("Server error:", error);

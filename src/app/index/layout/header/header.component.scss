@@ -15,9 +15,13 @@
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 1px 1px;
+  padding: 10px 10px;
   font-size: 18px !important;
   line-height: 20px;
+}
+
+.text-large {
+  font-size: 16px !important;
 }
 
 .logo-container {
@@ -31,11 +35,12 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .nav-link {
   color: #9a9a9a !important;
+  padding: 5px;
 }
 
 .nav-item {
@@ -90,7 +95,7 @@
   }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .bg-image {
     padding-top: 5px !important;
   }
@@ -101,7 +106,8 @@
     display: none !important;
   }
 
-  .container, .navbar {
+  .container,
+  .navbar {
     max-width: 100% !important;
     border-radius: 0% !important;
     margin-top: 0% !important;

@@ -1,5 +1,5 @@
 <main class="container">
-  <div class="d-flex justify-content-between">
+  <div class="d-flex flex-wrap-reverse justify-content-between">
     <form class="col-xl-7 form-container" [formGroup]="bookingForm">
       <!-- Booking Detail -->
       <ng-container *ngIf="step === 1">
@@ -28,7 +28,7 @@
         </div>
         <div class="d-flex flex-column">
           <label for="event_time" class="label-name">Event Time</label>
-          <div class="d-flex justify-content-between box-2">
+          <div class="d-flex justify-content-between flex-wrap box-2">
             <div class="d-flex align-items-center">
               <img
                 src="../../../../assets/images/sunset.png"
@@ -72,7 +72,7 @@
       <ng-container *ngIf="step === 2">
         <h3 class="h3-f-t">Customer Detail</h3>
         <hr />
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
           <div class="inputGroup d-flex flex-column">
             <label for="customer_name" class="label-name"> Customer Name</label>
             <input
@@ -94,7 +94,7 @@
             />
           </div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
           <div class="inputGroup d-flex flex-column">
             <label for="address" class="label-name"> Address</label>
             <input
@@ -116,7 +116,7 @@
             />
           </div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
           <div class="inputGroup d-flex flex-column">
             <label for="city" class="label-name"> City</label>
             <input
@@ -138,7 +138,7 @@
             />
           </div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
           <div class="inputGroup d-flex flex-column">
             <label for="cnic" class="label-name"> CNIC</label>
             <input
@@ -609,7 +609,7 @@
       </ng-container>
     </form>
     <div
-      class="d-flex flex-column justify-content-center align-items-center col-xl-5"
+      class="d-flex flex-column justify-content-center align-items-center col-xl-5 img-container__article"
     >
       <img
         src="../../../../assets/images/date-calendar.png"

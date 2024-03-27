@@ -8,6 +8,8 @@ import { CalendarCarouselComponent } from "../calendar-carousel/calendar-carouse
 
 @Component({
   selector: "app-hall-booking",
+  templateUrl: "./hall-booking.component.html",
+  styleUrls: ["./hall-booking.component.scss"],
   standalone: true,
   imports: [
     CommonModule,
@@ -17,8 +19,6 @@ import { CalendarCarouselComponent } from "../calendar-carousel/calendar-carouse
     FoodBookingComponent,
     CalendarCarouselComponent,
   ],
-  templateUrl: "./hall-booking.component.html",
-  styleUrls: ["./hall-booking.component.scss"],
 })
 export class HallBookingComponent implements OnInit {
   constructor() {}

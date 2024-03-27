@@ -47,10 +47,14 @@ export class CustomerSignupPageComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.userSignup = this.formBuilder.group({
-      userName: new FormControl("", [Validators.required]),
+      userFName: new FormControl("", [Validators.required]),
+      userLName: new FormControl("", [Validators.required]),
       userEmail: new FormControl("", [Validators.required, Validators.email]),
       userPwd: new FormControl("", [Validators.required]),
+      confirmPwd: new FormControl("", [Validators.required]),
       type: new FormControl("", [Validators.required]),
+      userAddress: new FormControl("", [Validators.required]),
+      cnic: new FormControl("", Validators.required),
     });
   }
 

@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Norican");
 @import "ngx-toastr/toastr";
+@import "~aos/dist/aos.css";
 
 ::selection {
   background-color: #3581f4;
@@ -369,12 +370,15 @@ html {
   --mat-badge-text-color: white;
 }
 
-
 .input-group {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.mat-expansion-indicator {
+  display: none !important;
 }

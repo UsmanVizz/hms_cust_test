@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-transparent py-3" data-bs-theme="dark">
   <div class="container bg-light p-4">
-    <a class="navbar-brand d-flex align-items-center" href="/home"
+    <a class="navbar-brand d-flex align-items-center ml-1" routerLink="/home"
       ><img src="../../../../assets/images/favicon.png" alt="Favourite Icon" />
       <span class="logo-title text-black">Hall Management System</span></a
     ><button
@@ -13,27 +13,48 @@
     </button>
     <div class="collapse navbar-collapse" id="navcol-5">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item mx-auto">
+        <li class="nav-item mx-auto my-auto">
           <a class="nav-link" routerLink="/home" routerLinkActive="active"
             >Home
           </a>
         </li>
-        <li class="nav-item mx-auto">
+        <li class="nav-item mx-auto  my-auto">
           <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
             >About</a
           >
         </li>
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="#">Service</a>
+        <li class="nav-item mx-auto  my-auto dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Service
+          </a>
+          <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item p-3 bg-light text-black-50 text-large" href="#">Action</a>
+            <a class="dropdown-item p-3 bg-light text-black-50 text-large" href="#">Another action</a>
+            <a class="dropdown-item p-3 bg-light text-black-50 text-large" href="#">Something else here</a>
+          </div>
         </li>
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="#">Blog</a>
+
+        <li class="nav-item mx-auto  my-auto">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active"
+            >Blog</a
+          >
         </li>
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="#">FAQ's </a>
+        <li class="nav-item mx-auto  my-auto">
+          <a class="nav-link" routerLink="/faq" routerLinkActive="active"
+            >FAQ's
+          </a>
         </li>
-        <li class="nav-item mx-auto text-nowrap">
-          <a class="nav-link" routerLink="#">Contact Us</a>
+        <li class="nav-item mx-auto  my-auto text-nowrap">
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
+            >Contact Us</a
+          >
         </li>
 
         <li class="nav-item mx-auto">
@@ -62,6 +83,10 @@
       </ul>
 
       <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="isLoggedIn">
+          <mat-icon class="account_circle">perm_identity</mat-icon>
+          <span>{{ userName }}</span>
+        </button>
         <button mat-menu-item (click)="selectCustomerProfile()">
           <img
             src="../../../../assets/icons/signup.png"
@@ -77,6 +102,10 @@
             class="avatar-img"
           />
           <span>Vendor</span>
+        </button>
+        <button mat-menu-item *ngIf="isLoggedIn" (click)="loginOrLogout()">
+          <mat-icon class="account_circle">exit_to_app</mat-icon>
+          <span>Logout</span>
         </button>
       </mat-menu>
     </div>

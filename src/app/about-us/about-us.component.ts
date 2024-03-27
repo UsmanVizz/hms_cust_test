@@ -3,6 +3,8 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { CheckOutComponent } from "../index/check-out/check-out.component";
 
+declare let AOS: any;
+
 @Component({
   selector: "app-about-us",
   standalone: true,
@@ -13,5 +15,11 @@ import { CheckOutComponent } from "../index/check-out/check-out.component";
 export class AboutUsComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init({
+      duration: 700,
+      delay: 200,
+      once: true,
+    });
+  }
 }

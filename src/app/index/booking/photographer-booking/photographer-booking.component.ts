@@ -5,10 +5,10 @@ import { CalendarCarouselComponent } from "../calendar-carousel/calendar-carouse
 
 @Component({
   selector: "app-photographer-booking",
-  standalone: true,
-  imports: [CommonModule, RouterModule, CalendarCarouselComponent],
   templateUrl: "./photographer-booking.component.html",
   styleUrls: ["./photographer-booking.component.scss"],
+  standalone: true,
+  imports: [CommonModule, RouterModule, CalendarCarouselComponent],
 })
 export class PhotographerBookingComponent implements OnInit {
   constructor() {}

@@ -1,12 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterModule } from "@angular/router";
-
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { AuthServiceService } from "src/app/services/auth-service.service";
 
 @Component({
   selector: "app-header",
@@ -25,9 +24,20 @@ import { MatButtonModule } from "@angular/material/button";
   ],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  isLoggedIn: boolean = false;
 
-  ngOnInit() {}
+  userName: string | null = null;
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) {}
+
+  ngOnInit() {
+    this.userName = this.authService.getLoggedInUserName();
+    console.log("User Name:", this.userName);
+
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
 
   selectCustomerProfile() {
     this.router.navigate(["/auth/customer-profile"]);
@@ -35,5 +45,14 @@ export class HeaderComponent implements OnInit {
 
   selectVendorProfile() {
     this.router.navigate(["/auth/vendor-profile"]);
+  }
+
+  loginOrLogout() {
+    if (this.isLoggedIn) {
+      this.authService.logout();
+      this.isLoggedIn = false;
+    } else {
+      this.router.navigate(["/login"]);
+    }
   }
 }

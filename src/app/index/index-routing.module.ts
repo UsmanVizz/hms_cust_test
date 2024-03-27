@@ -33,6 +33,23 @@ const routes: Routes = [
         (m) => m.DateBookingComponent
       ),
   },
+  {
+    path: "faq",
+    loadComponent: () =>
+      import("./faq/faq.component").then((m) => m.FaqComponent),
+  },
+  {
+    path: "blog",
+    loadComponent: () =>
+      import("./blog/blog.component").then((m) => m.BlogComponent),
+  },
+  {
+    path: "contact-us",
+    loadComponent: () =>
+      import("./contact-us/contact-us.component").then(
+        (m) => m.ContactUsComponent
+      ),
+  },
 ];
 
 @NgModule({
