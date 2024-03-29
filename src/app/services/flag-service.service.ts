@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { CountryFlag } from "../models/country-flag";
@@ -8,6 +8,13 @@ import { CountryFlag } from "../models/country-flag";
 })
 export class FlagServiceService {
   private flagApi = "https://country-code-au6g.vercel.app/Country.json";
+  // private apiUrl = "https://codesofcountry1.p.rapidapi.com/";
+  private flagApiUrl = "https://rest-countries10.p.rapidapi.com/countries";
+  // private rapidApiKey = "10b9e3ff42msh54d8d674158111ap1a4efbjsn9a99bd452df6";
+  // private rapidApiHost = "codesofcountry1.p.rapidapi.com";
+
+  private rapidApiKey = "10b9e3ff42msh54d8d674158111ap1a4efbjsn9a99bd452df6";
+  private rapidApiHost = "rest-countries10.p.rapidapi.com";
 
   flagArray: CountryFlag[] = [];
 
@@ -1946,5 +1953,14 @@ export class FlagServiceService {
 
   getCountryCode(): Observable<any> {
     return this.http.get(this.flagApi);
+  }
+
+  getCountries(): Observable<any> {
+    const headers = new HttpHeaders({
+      "X-RapidAPI-Key": this.rapidApiKey,
+      "X-RapidAPI-Host": this.rapidApiHost,
+    });
+
+    return this.http.get(this.flagApiUrl, { headers });
   }
 }

@@ -158,11 +158,6 @@ ul {
   padding-left: 0.5rem;
 }
 
-span.mat-mdc-button-touch-target {
-  border: 1px solid rgba(128, 128, 128, 0.473);
-  border-radius: 50px;
-}
-
 ///////////////////////////////////////
 
 .mat-accent {
@@ -382,3 +377,7 @@ html {
 .mat-expansion-indicator {
   display: none !important;
 }
+
+// .mat-calendar-header {
+//   display: none;
+// }

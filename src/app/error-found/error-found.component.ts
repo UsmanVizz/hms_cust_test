@@ -16,7 +16,7 @@ export class ErrorFoundComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.title = params["title"];
+      this.title = params["url;"];
     });
   }
 }

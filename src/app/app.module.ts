@@ -42,11 +42,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   pbDirection: "ltr",
   pbThickness: 4,
   hasProgressBar: true,
-  text: "",
   textColor: "#FFFFFF",
   textPosition: "center-center",
-  maxTime: -1,
-  minTime: 300,
+
 };
 
 @NgModule({
@@ -61,12 +59,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatDatepickerModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 3000,
       preventDuplicates: true,
+      progressBar: true,
     }),
     NgxUiLoaderRouterModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderHttpModule,
   ],
   bootstrap: [AppComponent],
 })

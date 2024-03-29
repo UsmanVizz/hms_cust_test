@@ -36,10 +36,6 @@ export class DateBookingComponent implements OnInit {
   bookingForm!: FormGroup;
 
   step: number = 1;
-  djChecked: boolean = false;
-  photographerChecked: boolean = false;
-  decorChecked: boolean = false;
-  foodChecked: boolean = false;
   panelOpenState: boolean = false;
   counter: number = 0;
 
@@ -55,6 +51,13 @@ export class DateBookingComponent implements OnInit {
       city: new FormControl("", [Validators.required]),
       contactNo: new FormControl("", [Validators.required]),
       cnic: new FormControl("", [Validators.required]),
+      nightTime: new FormControl("", [Validators.required]),
+      morningTime: new FormControl("", [Validators.required]),
+      eveningTime: new FormControl("", [Validators.required]),
+      djChecked: new FormControl("", [Validators.required]),
+      photographerChecked: new FormControl("", [Validators.required]),
+      decorChecked: new FormControl("", [Validators.required]),
+      foodChecked: new FormControl("", [Validators.required]),
       menuItems: this.fb.array([]),
     });
   }
@@ -193,6 +196,7 @@ export class DateBookingComponent implements OnInit {
           return;
         }
       }
+
       this.step++;
     }
   }
@@ -201,7 +205,7 @@ export class DateBookingComponent implements OnInit {
     this.step = 1;
   }
 
-  editDetails(){
+  editDetails() {
     this.step = 2;
   }
 
@@ -211,11 +215,10 @@ export class DateBookingComponent implements OnInit {
     }
   }
 
-  save(): void {
-    if (this.bookingForm.valid) {
-      console.log(this.bookingForm.value);
-    } else {
-      console.log("Form is invalid");
-    }
+  save() {
+    console.log(this.bookingForm.value);
+    this.toastr.success("Your booking has been saved.");
+    this.bookingForm.reset();
+    this.step = 1;
   }
 }

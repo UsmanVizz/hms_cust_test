@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { HeaderComponent } from "../layout/header/header.component";
 
 import { HallBookingComponent } from "../booking/hall-booking/hall-booking.component";
@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private toastr: ToastrService,
-    private authService: AuthServiceService
+    private authService: AuthServiceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -94,6 +95,48 @@ export class HomeComponent implements OnInit {
         this.locationName = "Location not found";
         this.toastr.error("Location not found", "Error");
       }
+    });
+  }
+
+  selectBookHall() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "hall booking" },
+    });
+  }
+
+  selectCatering() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "catering" },
+    });
+  }
+
+  selectPhotographer() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "photographer" },
+    });
+  }
+
+  selectMakeUpArtist() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "makeup artist" },
+    });
+  }
+
+  selectDecor() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "decor" },
+    });
+  }
+
+  selectMusician() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "musician" },
+    });
+  }
+
+  selectMehndiArtist() {
+    this.router.navigate(["/search-hall"], {
+      queryParams: { type: "mehndi artist" },
     });
   }
 }

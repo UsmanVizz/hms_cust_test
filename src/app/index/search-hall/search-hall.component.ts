@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
+import { ActivatedRoute, RouterModule } from "@angular/router";
 import { CalendarCarouselComponent } from "../booking/calendar-carousel/calendar-carousel.component";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatCardModule } from "@angular/material/card";
@@ -36,6 +36,7 @@ import { MatSliderModule } from "@angular/material/slider";
   ],
 })
 export class SearchHallComponent implements OnInit {
+  title!: string;
   selected!: string;
   openCalendar: boolean = false;
   isCalendarOpen: boolean = false;
@@ -68,11 +69,19 @@ export class SearchHallComponent implements OnInit {
   valueEnd: any = 0;
   valueStart: any = 0;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
       city: new FormControl<string | null>(null),
+    });
+
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      this.title = params["type"];
     });
   }
 

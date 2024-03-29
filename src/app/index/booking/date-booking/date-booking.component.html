@@ -35,7 +35,11 @@
                 alt="morning icon"
                 class="sun-icon"
               />
-              <input type="checkbox" name="" id="morning" />
+              <input
+                type="checkbox"
+                id="morning"
+                formControlName="morningTime"
+              />
               <label for="morning" class="span label">Booked-Morning</label>
             </div>
             <div class="d-flex align-items-center">
@@ -44,7 +48,7 @@
                 alt="day icon"
                 class="sun-icon"
               />
-              <input type="checkbox" name="" id="day" />
+              <input type="checkbox" formControlName="eveningTime" id="day" />
               <label for="day" class="span label">Available-Day</label>
             </div>
             <div class="d-flex align-items-center">
@@ -53,7 +57,7 @@
                 alt="night icon"
                 class="sun-icon night-icon"
               />
-              <input type="checkbox" name="" id="night" />
+              <input type="checkbox" id="night" formControlName="nightTime" />
               <label for="night" class="span label">Available-Night</label>
             </div>
           </div>
@@ -343,7 +347,7 @@
           >
             <span class="span">Select Vendar's</span>
             <div class="d-flex flex-column">
-              <mat-checkbox [(ngModel)]="djChecked">
+              <mat-checkbox formControlName="djChecked">
                 <div class="d-flex align-items-center">
                   <img
                     src="../../../../assets/auth-icon/music-icon.png
@@ -354,7 +358,7 @@
                   <span class="m-4">DJ</span>
                 </div>
               </mat-checkbox>
-              <mat-checkbox [(ngModel)]="photographerChecked">
+              <mat-checkbox formControlName="photographerChecked">
                 <div class="d-flex align-items-center">
                   <img
                     src="../../../../assets/auth-icon/camera-icon.png"
@@ -364,7 +368,7 @@
                   <span class="m-4">Photographer</span>
                 </div>
               </mat-checkbox>
-              <mat-checkbox [(ngModel)]="decorChecked">
+              <mat-checkbox formControlName="decorChecked">
                 <div class="d-flex align-items-center">
                   <img
                     src="../../../../assets/auth-icon/decorator.png"
@@ -374,7 +378,7 @@
                   <span class="m-4">Decoration</span>
                 </div>
               </mat-checkbox>
-              <mat-checkbox [(ngModel)]="foodChecked">
+              <mat-checkbox formControlName="foodChecked">
                 <div class="d-flex align-items-center">
                   <img
                     src="../../../../assets/hall-booking-assets/leg-piece.png"

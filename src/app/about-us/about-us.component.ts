@@ -7,10 +7,10 @@ declare let AOS: any;
 
 @Component({
   selector: "app-about-us",
-  standalone: true,
-  imports: [CommonModule, RouterModule, CheckOutComponent],
   templateUrl: "./about-us.component.html",
   styleUrls: ["./about-us.component.scss"],
+  standalone: true,
+  imports: [CommonModule, RouterModule, CheckOutComponent],
 })
 export class AboutUsComponent implements OnInit {
   constructor() {}

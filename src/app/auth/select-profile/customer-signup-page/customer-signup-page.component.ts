@@ -34,6 +34,8 @@ import { ToastrService } from "ngx-toastr";
 export class CustomerSignupPageComponent implements OnInit {
   dataName: string = "";
 
+  countries: any;
+
   getCountryCode: any;
 
   userSignup: FormGroup;
@@ -71,6 +73,8 @@ export class CustomerSignupPageComponent implements OnInit {
     }
 
     this.getCountryCode = this.flagService.flagArray;
+
+    // this.getCountries();
   }
 
   userRegistration() {
@@ -88,5 +92,17 @@ export class CustomerSignupPageComponent implements OnInit {
         }
       },
     });
+  }
+
+  getCountries(): void {
+    this.flagService.getCountries().subscribe(
+      (response) => {
+        console.log("Contries", response);
+        this.countries = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

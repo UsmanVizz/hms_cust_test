@@ -48,64 +48,61 @@
           <button class="state-btn">Rawalpindi</button>
           <button class="state-btn">Islamabad</button>
         </div> -->
-        <div
-          class="d-flex justify-content-center flex-wrap gap-5 mb-5"
-          data-aos="flip-up"
-        >
-          <a routerLink="/search-hall">
-            <div
-              class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+        <div class="d-flex justify-content-center flex-wrap gap-5 mb-5">
+          <div
+            class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectBookHall()"
+          >
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 40 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 40 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.00009 35.0042H35.0043"
-                  stroke="#b1b1b1"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M1 8.55649V10.4456C1 11.9487 1.5971 13.3902 2.65993 14.453C3.72277 15.5159 5.16429 16.113 6.66737 16.113C8.17044 16.113 9.61196 15.5159 10.6748 14.453C11.7376 13.3902 12.3347 11.9487 12.3347 10.4456M1 8.55649H35.0042M1 8.55649L4.77824 1H31.2259L35.0042 8.55649M12.3347 10.4456V8.55649M12.3347 10.4456C12.3347 11.9487 12.9318 13.3902 13.9947 14.453C15.0575 15.5159 16.499 16.113 18.0021 16.113C19.5052 16.113 20.9467 15.5159 22.0095 14.453C23.0724 13.3902 23.6695 11.9487 23.6695 10.4456M23.6695 10.4456V8.55649M23.6695 10.4456C23.6695 11.9487 24.2666 13.3902 25.3294 14.453C26.3922 15.5159 27.8337 16.113 29.3368 16.113C30.8399 16.113 32.2814 15.5159 33.3443 14.453C34.4071 13.3902 35.0042 11.9487 35.0042 10.4456V8.55649"
-                  stroke="#b1b1b1"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M4.77832 35.0071V15.8325"
-                  stroke="#b1b1b1"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M31.226 35.0071V15.8325"
-                  stroke="#b1b1b1"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.3348 35.0042V27.4477C12.3348 26.4456 12.7328 25.4846 13.4414 24.7761C14.15 24.0675 15.111 23.6694 16.113 23.6694H19.8913C20.8933 23.6694 21.8543 24.0675 22.5629 24.7761C23.2714 25.4846 23.6695 26.4456 23.6695 27.4477V35.0042"
-                  stroke="#b1b1b1"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <path
+                d="M1.00009 35.0042H35.0043"
+                stroke="#b1b1b1"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1 8.55649V10.4456C1 11.9487 1.5971 13.3902 2.65993 14.453C3.72277 15.5159 5.16429 16.113 6.66737 16.113C8.17044 16.113 9.61196 15.5159 10.6748 14.453C11.7376 13.3902 12.3347 11.9487 12.3347 10.4456M1 8.55649H35.0042M1 8.55649L4.77824 1H31.2259L35.0042 8.55649M12.3347 10.4456V8.55649M12.3347 10.4456C12.3347 11.9487 12.9318 13.3902 13.9947 14.453C15.0575 15.5159 16.499 16.113 18.0021 16.113C19.5052 16.113 20.9467 15.5159 22.0095 14.453C23.0724 13.3902 23.6695 11.9487 23.6695 10.4456M23.6695 10.4456V8.55649M23.6695 10.4456C23.6695 11.9487 24.2666 13.3902 25.3294 14.453C26.3922 15.5159 27.8337 16.113 29.3368 16.113C30.8399 16.113 32.2814 15.5159 33.3443 14.453C34.4071 13.3902 35.0042 11.9487 35.0042 10.4456V8.55649"
+                stroke="#b1b1b1"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.77832 35.0071V15.8325"
+                stroke="#b1b1b1"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M31.226 35.0071V15.8325"
+                stroke="#b1b1b1"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.3348 35.0042V27.4477C12.3348 26.4456 12.7328 25.4846 13.4414 24.7761C14.15 24.0675 15.111 23.6694 16.113 23.6694H19.8913C20.8933 23.6694 21.8543 24.0675 22.5629 24.7761C23.2714 25.4846 23.6695 26.4456 23.6695 27.4477V35.0042"
+                stroke="#b1b1b1"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-              <span>Book Hall</span>
-            </div>
-          </a>
+            <span>Book Hall</span>
+          </div>
 
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectCatering()"
           >
             <svg
               width="40"
@@ -124,6 +121,7 @@
           </div>
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container photographer-container"
+            (click)="selectPhotographer()"
           >
             <svg
               width="40"
@@ -154,6 +152,7 @@
           </div>
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectMakeUpArtist()"
           >
             <svg
               width="40"
@@ -204,6 +203,7 @@
           </div>
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectDecor()"
           >
             <svg
               width="40"
@@ -242,6 +242,7 @@
           </div>
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectMusician()"
           >
             <svg
               width="40"
@@ -288,6 +289,7 @@
           </div>
           <div
             class="d-flex flex-column gap-1 justify-content-center align-items-center icon-container"
+            (click)="selectMehndiArtist()"
           >
             <svg
               width="40"
@@ -391,11 +393,11 @@
     class="d-flex flex-column justify-content-around align-items-center gap-5 work-container"
   >
     <div
-      class="d-flex flex-column justify-content-center align-items-baseline work-container__2"
+      class="d-flex flex-column justify-content-center align-items-center work-container__2"
       data-aos="fade-right"
     >
       <h3 class="h3-f-t">How it Works!</h3>
-      <p class="work-description col-xl-8">
+      <p class="work-description">
         Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
       </p>
     </div>
