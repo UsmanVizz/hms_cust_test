@@ -1,0 +1,190 @@
+<main class="bg-color mt-5">
+  <div class="d-flex flex-wrap">
+    <div class="">
+      <img
+        src="../../../assets/images/image 15.png"
+        alt="Image not preview"
+        class="img"
+      />
+    </div>
+
+    <div
+      class="d-flex flex-column justify-content-between container col-xxl-7 px-4 py-5"
+    >
+      <div class="d-flex gap-3">
+        <a routerLink="/auth/login" routerLinkActive="active" class="state-btn"
+          >Login</a
+        >
+        <a
+          routerLink="/auth/customer-signup"
+          routerLinkActive="active"
+          class="state-btn"
+        >
+          Sign Up
+        </a>
+      </div>
+      <h3 class="h3-f-t col-xl-7 text-capitalize">
+        Sign Up with personal details
+      </h3>
+      <p class="lead paragraph-desc col-xl-7">
+        Lorem ipsum dolor sit amet, eiusmod consectetur adipiscing elit, sed
+        eiusm tempor incididunt ut labore.
+      </p>
+      <div class="form-wrapper">
+        <form [formGroup]="userSignup" (ngSubmit)="userRegistration()">
+          <div class="d-flex gap-5 group-wrapper">
+            <div class="input-group">
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                id="fname"
+                placeholder="Enter First Name"
+                class="border"
+                formControlName="userFName"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                placeholder="Enter Last Name"
+                class="border"
+                formControlName="userLName"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex gap-5 group-wrapper">
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                class="border"
+                formControlName="userPwd"
+                required
+                autocomplete="new-password"
+              />
+            </div>
+            <div class="input-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                class="border"
+                formControlName="confirmPwd"
+                placeholder="Confirm your password"
+                required
+                autocomplete="new-password"
+              />
+            </div>
+          </div>
+          <div class="d-flex gap-5 group-wrapper">
+            <div class="input-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter Your Email"
+                class="border"
+                formControlName="userEmail"
+                required
+                autocomplete="username"
+              />
+            </div>
+            <div class="input-group">
+              <label for="pnumber">Contact Number</label>
+              <div class="d-flex">
+                <select id="country" style="border-right: none !important">
+                  <option
+                    *ngFor="let country of getCountryCode"
+                    [value]="country.name"
+                  >
+                    {{ country.dial_code }} {{ country.emoji }}
+                  </option>
+                </select>
+
+                <input
+                  type="text"
+                  id="pnumber"
+                  class="pnumber-input"
+                  placeholder="Enter Phone Number"
+                  class="border"
+                  style="
+                    border-left: none !important;
+                    border-top-right-radius: 5px !important;
+                    border-top-left-radius: 0px !important ;
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 5px !important;
+                  "
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-5 group-wrapper">
+            <div class="input-group">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="Enter your address"
+                class="border"
+                formControlName="userAddress"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="cnic">CNIC</label>
+              <input
+                type="text"
+                id="cnic"
+                placeholder="Enter your CNIC"
+                class="border"
+                formControlName="cnic"
+                required
+              />
+            </div>
+          </div>
+          <div class="checkbox-group d-flex align-items-baseline">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree to the Terms and Conditions</label>
+          </div>
+          <div
+            class="button-group d-flex justify-content-between align-items-center"
+          >
+            <div class="google-button">
+              <img
+                src="../../../../assets/auth-icon/google-icon.png"
+                alt=""
+                class="google-icon"
+              />
+              Sign Up with Google
+            </div>
+            <button type="submit" class="signup-btn">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- 
+<div>
+  <ul *ngFor="let data of countries">
+    <li>
+      {{ data?.code.aplha2code }}
+    </li>
+    <li>{{ data?.name.shortnamelowercase }}</li>
+    <li>
+      <img
+        [src]="data?.flag.officialflag.svg"
+        [alt]="data?.flag?.officialflag"
+        style="width: 100px; height: 60px"
+      />
+    </li>
+    <li>{{ data?.code.numericcode }}</li>
+  </ul>
+</div> -->

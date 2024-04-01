@@ -1,0 +1,242 @@
+main,
+article {
+  background-image: linear-gradient(
+    180deg,
+    #ffffffc7,
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    #ffffff2d
+  );
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rating-detail__decription {
+  max-width: 700px;
+}
+
+.h3-f-t {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.span {
+  color: #c4c4c4;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 5px;
+}
+
+.star-rating {
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.star-rating .fa-star {
+  color: orange;
+}
+
+.hall-desc__title {
+  font-size: 16px;
+}
+
+.p-marriage-title {
+  font-size: 28px;
+  font-weight: 500;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.marriage-title {
+  color: #fb6f10;
+  font-size: 28px;
+  font-weight: 700 !important;
+}
+
+.create-btn,
+.book-now__btn {
+  color: #fff;
+  background-color: #fb6f10;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+  height: fit-content;
+  font-size: 18px;
+}
+
+.create-btn {
+  padding: 10px 20px;
+}
+
+.fst-italic {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card-img-top {
+  width: 450px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.img-thumbnail {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  height: fit-content;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 110px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #cfcfcf;
+  border: none;
+  border-radius: 10px;
+}
+
+.carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #ffa500;
+  border: none;
+}
+
+.carousel-dots span {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots span.active {
+  background-color: #fff;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next,
+.carousel-control .icon-prev {
+  width: 30px;
+  height: 30px;
+  margin-top: 250px;
+  font-size: 30px;
+}
+
+.carousel-inner {
+  border-radius: 10px;
+}
+
+.form-container {
+  border: 1px solid #bebebe;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.form-container__2 {
+  border-bottom: 1px solid #807f7f;
+  padding: 5px;
+}
+
+.h4-f-t {
+  font-weight: 700;
+  font-family: "Poppins";
+  font-size: 18px;
+}
+
+.h5-f-t {
+  color: #fb6f10;
+  font-family: "Poppins";
+  font-weight: 700;
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+span img {
+  width: 25px;
+  height: 25px;
+}
+
+.counter-container {
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.counter-input {
+  width: 40px;
+  border: none;
+  text-align: center;
+}
+
+.counter-input:focus {
+  outline: none;
+}
+
+.add-btn {
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: #c4c4c4;
+}
+
+li {
+  display: block;
+  margin: 10px 0px;
+  text-transform: capitalize;
+}
+
+.review-btn {
+  color: #fb6f10;
+  text-decoration: underline #fb6f10;
+  border: none;
+  background-color: transparent;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.review-btn:hover {
+  font-weight: 500;
+}
+
+.review-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1250px) {
+  .wrapper-container {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}

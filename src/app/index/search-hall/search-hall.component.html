@@ -1,0 +1,164 @@
+<div class="container-fluid">
+  <main class="container mt-5">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-column">
+        <h2 class="h2-f-t text-capitalize">{{ title }} In Pakistan</h2>
+        <p class="col-xl-10 paragraph">
+          Book the best wedding venues and marquees, in Islamabad, Lahore, and
+          Karachi and the best wedding halls in Rawalpindi to host your wedding
+          outside under the stars or in a gorgeous hall, Glance at their menus,
+          halls, charges, and much more.
+        </p>
+        <hr />
+      </div>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <div class="d-flex flex-column col-xl-3 bg-color p-3 rounded-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="span">Filter</span>
+            <button class="reset-filter">Reset</button>
+          </div>
+          <hr />
+
+          <div class="d-flex flex-column mt-3">
+            <button
+              class="d-flex justify-content-between align-items-center tree-btn"
+              (click)="showCalendar()"
+            >
+              Calender
+              <mat-icon *ngIf="isCalendarOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="!isCalendarOpen">keyboard_arrow_right</mat-icon>
+            </button>
+            <mat-card
+              *ngIf="openCalendar"
+              class="demo-inline-calendar-card mt-1"
+            >
+              <mat-calendar [(selected)]="selected"></mat-calendar>
+            </mat-card>
+          </div>
+
+          <hr />
+
+          <div class="d-flex flex-column mt-3">
+            <button
+              class="d-flex justify-content-between align-items-center tree-btn"
+              (click)="showTime()"
+            >
+              Time
+              <mat-icon *ngIf="isTimeOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="!isTimeOpen">keyboard_arrow_right</mat-icon>
+            </button>
+
+            <div
+              class="d-flex flex-column justify-content-center"
+              *ngIf="openTime"
+            >
+              <mat-checkbox [(ngModel)]="morningChecked"
+                >Morning Time</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="afternoonChecked"
+                >Afternoon Time</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="eveningChecked"
+                >Evening Time</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="nightChecked">Night Time</mat-checkbox>
+            </div>
+          </div>
+          <hr />
+
+          <div class="d-flex flex-column mt-3">
+            <button
+              class="d-flex justify-content-between align-items-center tree-btn"
+              (click)="showCapacity()"
+            >
+              Capacity
+              <mat-icon *ngIf="isCapacityOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="!isCapacityOpen">keyboard_arrow_right</mat-icon>
+            </button>
+
+            <div
+              class="d-flex flex-column justify-content-center"
+              *ngIf="openCapacity"
+            >
+              <mat-checkbox [(ngModel)]="num1">100</mat-checkbox>
+              <mat-checkbox [(ngModel)]="num2">200</mat-checkbox>
+              <mat-checkbox [(ngModel)]="num3">300</mat-checkbox>
+            </div>
+          </div>
+          <hr />
+
+          <div class="d-flex flex-column mt-3">
+            <button
+              class="d-flex justify-content-between align-items-center tree-btn"
+              (click)="showRange()"
+            >
+              Price Range
+              <mat-icon *ngIf="isRangeOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="!isRangeOpen">keyboard_arrow_right</mat-icon>
+            </button>
+
+            <div
+              class="d-flex flex-column justify-content-center"
+              *ngIf="openPriceRange"
+            >
+              <div style="display: flex; justify-content: space-between">
+                <label class="example-value-label">{{ valueStart }}</label>
+                <label class="example-value-label">{{ valueEnd }}</label>
+              </div>
+              <mat-slider [max]="max" [min]="min" [step]="5" [discrete]="true">
+                <input [(ngModel)]="valueStart" matSliderStartThumb />
+                <input [(ngModel)]="valueEnd" matSliderEndThumb />
+              </mat-slider>
+            </div>
+          </div>
+          <hr />
+
+          <div class="d-flex flex-column mt-3">
+            <button
+              class="d-flex justify-content-between align-items-center tree-btn"
+              (click)="showBudget()"
+            >
+              Capacity
+              <mat-icon *ngIf="isBudgetOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="!isBudgetOpen">keyboard_arrow_right</mat-icon>
+            </button>
+
+            <div
+              class="d-flex flex-column justify-content-center"
+              *ngIf="openBudget"
+            >
+              <mat-checkbox [(ngModel)]="budgetPacks"
+                >Budget Packs</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="exclusiveGrabs"
+                >Exclusive Grabs</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="premiumGrabs"
+                >Premium Grabs</mat-checkbox
+              >
+              <mat-checkbox [(ngModel)]="luxurious">Laxurious</mat-checkbox>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div class="d-flex flex-column">
+          <div
+            class="d-flex justify-content-between align-items-center rounded-2 primary-box"
+          >
+            <div class="d-flex align-items-center gap-2 box-1">
+              <h5 class="h5-f-t">Islamabad 40 Hall Found</h5>
+              <span class="line-vector"></span>
+              <h6 class="h6-f-t">Show Result: 1-6</h6>
+            </div>
+            <div class="d-flex align-items-center gap-2 box-2">
+              <h6 class="h6-f-t">View:</h6>
+              <mat-icon>line_weight</mat-icon>
+              <mat-icon>grid_on</mat-icon>
+            </div>
+          </div>
+          <app-calendar-carousel></app-calendar-carousel>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,400 @@
+<main class="pt-4 pb-4">
+  <div class="container d-flex flex-row-reverse justify-content-between align-items-start gap-4 wrapper-container">
+    <div class="d-flex flex-column col-xl-8 rating-detail__decription">
+      <div class="d-flex justify-content-between gap-5">
+        <div class="d-flex flex-column justify-content-between">
+          <h3 class="h3-f-t pb-3">BAR-RESTAURANT MET CYRBJA</h3>
+          <div class="d-flex align-items-center">
+            <img
+              src="../../../../assets/icons/address-icon.png"
+              alt="Title Icon"
+            />
+            <span class="span"
+              >&nbsp;Khurshid Alam Road, Near Polo Ground, Lahore Cantt</span
+            >
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+          <span class="span">Rating:</span>
+          <div class="d-flex gap-1 align-items-end">
+            <p class="span text-black fw-normal">5.0</p>
+            <div class="star-rating">
+              <span
+                class="fa"
+                *ngFor="let star of [1, 2, 3, 4, 5]"
+                [ngClass]="{
+                  'fa-star': rating >= star,
+                  'fa-star-o': rating < star
+                }"
+                (click)="setRating(star)"
+              ></span>
+              <input
+                type="hidden"
+                name="whatever1"
+                class="rating-value"
+                [value]="rating"
+              />
+            </div>
+            <span class="span">(1214)</span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/hall-booking-assets/library.png"
+              alt="image not preview"
+            />
+            <span class="span">Branch</span>
+          </div>
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/icons/address-icon.png"
+              alt="image not preview"
+            />
+            <p class="span text-black fw-normal">Address</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/hall-booking-assets/floor.png"
+              alt="image not preview"
+            />
+            <span class="span">Floor</span>
+          </div>
+          <div class="d-flex gap-2">
+            <p class="span text-black fw-normal">2nd</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/hall-booking-assets/car.png"
+              alt="image not preview"
+            />
+            <span class="span">Parking capacity</span>
+          </div>
+          <div class="d-flex gap-2">
+            <p class="span text-black fw-normal">15-Mar-2024</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/hall-booking-assets/area.png"
+              alt="image not preview"
+            />
+            <span class="span">Area</span>
+          </div>
+          <div class="d-flex gap-2">
+            <p class="span text-black fw-normal">2000 sq.ft</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex gap-2">
+            <img
+              src="../../../../assets/hall-booking-assets/floor.png"
+              alt="image not preview"
+            />
+            <span class="span">Seating</span>
+          </div>
+          <div class="d-flex gap-2">
+            <p class="span text-black fw-normal">400</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-column mt-5">
+        <div class="d-flex align-content-center mb-3">
+          <img
+            src="../../../../assets/icons/address-icon.png"
+            alt="image not preview"
+          />
+          <span class="span hall-desc__title">Hall Description</span>
+        </div>
+        <p class="span text-black fw-normal lh-base">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi itaque
+          asperiores voluptatem ipsum placeat expedita est vel tempora pariatur
+          qui! Distinctio odit sit officiis error neque quidem doloremque
+          accusantium voluptatum.
+        </p>
+      </div>
+      <div class="d-flex flex-column gap-3 mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="p-marriage-title">
+            <span class="marriage-title">Rs: 25,000</span> to
+            <span class="marriage-title">Rs: 50,000</span>
+          </div>
+          <button class="book-now__btn" (click)="dateBooking()">Book Now</button>
+        </div>
+        <span class="span fst-italic">Per Event</span>
+      </div>
+      <hr />
+      <div class="d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <h3 class="h3-f-t">Menu Pricing</h3>
+          <button class="create-btn" (click)="createMenu()">
+            Create Your Menu
+          </button>
+        </div>
+
+        <div *ngIf="showMenuForm">
+          <form [formGroup]="menuForm" (ngSubmit)="onSubmit()">
+            <div formArrayName="menuItems">
+              <div
+                class="d-flex flex-column form-container"
+                *ngFor="let menuItem of menuItems.controls; let i = index"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-center form-container__2"
+                  [formGroupName]="i"
+                >
+                  <h4 class="h4-f-t">Deal {{ i + 1 }}</h4>
+                  <div class="d-flex align-items-center gap-2">
+                    <h5 class="h5-f-t">PKR 2,800</h5>
+                    <span class="span">per Guest</span>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="d-flex align-items-start gap-4 p-4">
+                    <div class="d-flex flex-column">
+                      <span
+                        class="span text-capitalize d-flex gap-2 align-items-center"
+                        ><img
+                          src="../../../../assets/hall-booking-assets/leg-piece.png"
+                          alt="image not preview"
+                        />main course</span
+                      >
+                      <ul>
+                        <li>Chicken Korma</li>
+                        <li>Salad & Naan</li>
+                        <li>Chicken Pulao</li>
+                        <li>Roohti</li>
+                      </ul>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <span
+                        class="span text-capitalize d-flex gap-2 align-items-center"
+                        ><img
+                          src="../../../../assets/hall-booking-assets/glass.png"
+                          alt="image not preview"
+                        />drinks</span
+                      >
+                      <ul>
+                        <li>Dew</li>
+                        <li>Sting</li>
+                      </ul>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <span
+                        class="span text-capitalize d-flex gap-2 align-items-center"
+                      >
+                        <img
+                          src="../../../../assets/hall-booking-assets/icecream.png"
+                          alt="image not preview"
+                        />Deserts</span
+                      >
+                      <ul>
+                        <li>Ice Cream</li>
+                      </ul>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <span
+                        class="span text-capitalize d-flex gap-2 align-items-center"
+                        ><img
+                          src="../../../../assets/hall-booking-assets/floor-2.png"
+                          alt="image not preview"
+                        />
+                        venders</span
+                      >
+                      <ul>
+                        <li>DJ</li>
+                        <li>Catering</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center align-items-start"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="d-flex counter-container">
+                        <mat-icon
+                          (click)="decrement(i)"
+                          class="add-btn"
+                          [ngStyle]="{
+                            background: getCounterValue(i) == 0 ? '#efefef' : ''
+                          }"
+                          >remove</mat-icon
+                        >
+
+                        <input
+                          type="text"
+                          [value]="getCounterValue(i)"
+                          class="counter-input"
+                          readonly
+                        />
+
+                        <mat-icon (click)="increment(i)" class="add-btn"
+                          >add</mat-icon
+                        >
+                      </div>
+                      <p class="fw-bolder m-3">Guests</p>
+                    </div>
+                    <div
+                      class="d-flex justify-content-evenly align-items-center"
+                    >
+                      <h3 class="h3-f-t marriage-title">PKR 25,000</h3>
+                      <button class="create-btn m-2" type="submit">
+                        Select Package
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <div
+        id="myCarousel"
+        class="carousel slide card-img-top"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators mx-auto">
+          <li
+            *ngFor="let card of cards; let i = index"
+            [attr.data-target]="'#myCarousel'"
+            [attr.data-slide-to]="i"
+            [class.active]="i === currentIndex"
+          ></li>
+        </ol>
+        <!-- Carousel Inner -->
+        <div class="carousel-inner card-img">
+          <div
+            class="item card carousel-item"
+            *ngFor="let card of displayedCards; let i = index"
+            [class.active]="i === 0"
+          >
+            <img
+              [src]="card.imageUrl"
+              alt="Slide {{ i }}"
+              class="card-img-top"
+            />
+          </div>
+        </div>
+
+        <!-- Thumbnails Section -->
+        <div class="text-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <!-- Previous Thumbnail -->
+            <div>
+              <img
+                *ngIf="currentIndex > 0"
+                [src]="cards[currentIndex - 1].imageUrl"
+                class="img-thumbnail mr-2"
+                alt="Thumbnail {{ currentIndex - 1 }}"
+                (click)="goToSlide(currentIndex - 1)"
+              />
+            </div>
+
+            <!-- Current Thumbnail (centered) -->
+            <div>
+              <img
+                [src]="cards[currentIndex].imageUrl"
+                class="img-thumbnail mx-2"
+                alt="Thumbnail {{ currentIndex }}"
+                (click)="goToSlide(currentIndex)"
+              />
+            </div>
+
+            <!-- Next Thumbnail -->
+            <div>
+              <img
+                *ngIf="currentIndex < cards.length - 1"
+                [src]="cards[currentIndex + 1].imageUrl"
+                class="img-thumbnail ml-2"
+                alt="Thumbnail {{ currentIndex + 1 }}"
+                (click)="goToSlide(currentIndex + 1)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and Right Controls -->
+        <a class="left carousel-control" (click)="prevSlide()" role="button">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" (click)="nextSlide()" role="button">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="mt-5">
+        <iframe
+          width="450px"
+          height="300px"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Vizz%20Web%20Solution+(Vizz%20Web%20Solution)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          ><a href="https://www.gps.ie/">gps vehicle tracker</a></iframe
+        >
+      </div>
+    </div>
+  </div>
+</main>
+
+<article>
+  <div class="container">
+    <h3 class="h3-f-t">Reviews</h3>
+    <hr />
+    <div class="d-flex flex-column gap-4">
+      <div
+        class="d-flex align-items-start gap-3 mt-4"
+        *ngFor="let data of reviews"
+      >
+        <img [src]="data.imageUrl" [alt]="data.name" class="review-img" />
+        <div class="d-flex flex-column col-xl-7">
+          <div class="d-flex justify-content-between">
+            <p class="fw-bolder m-3">{{ data.name }}</p>
+            <span class="span">{{ data.createdAt }}</span>
+          </div>
+          <div class="d-flex justify-content-between mt-2 mb-3">
+            <span class="span text-capitalize">{{ data.designation }}</span>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="star-rating">
+                  <span
+                    class="fa"
+                    *ngFor="let star of [1, 2, 3, 4, 5]"
+                    [ngClass]="{
+                      'fa-star': data.rating >= star,
+                      'fa-star-o': data.rating < star
+                    }"
+                  ></span>
+                  <input
+                    type="hidden"
+                    name="whatever1"
+                    class="rating-value"
+                    [value]="data.rating"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="span text-black fw-normal">{{ data.comment }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button class="review-btn">Review All</button>
+    </div>
+  </div>
+</article>
