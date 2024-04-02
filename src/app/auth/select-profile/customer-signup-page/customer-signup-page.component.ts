@@ -49,14 +49,15 @@ export class CustomerSignupPageComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.userSignup = this.formBuilder.group({
-      userFName: new FormControl("", [Validators.required]),
-      userLName: new FormControl("", [Validators.required]),
-      userEmail: new FormControl("", [Validators.required, Validators.email]),
-      userPwd: new FormControl("", [Validators.required]),
-      confirmPwd: new FormControl("", [Validators.required]),
-      type: new FormControl("", [Validators.required]),
-      userAddress: new FormControl("", [Validators.required]),
+      first_name: new FormControl("", [Validators.required]),
+      last_name: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [Validators.required]),
+      // confirmPwd: new FormControl("", [Validators.required]),
+      user_type: new FormControl("", [Validators.required]),
+      address: new FormControl("", [Validators.required]),
       cnic: new FormControl("", Validators.required),
+      contact_number: new FormControl("", [Validators.required]),
     });
   }
 
@@ -64,7 +65,7 @@ export class CustomerSignupPageComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       console.log(params);
       this.dataName = params["type"];
-      this.userSignup.patchValue({ type: this.dataName });
+      this.userSignup.patchValue({ user_type: this.dataName });
     });
 
     if (!this.dataName) {
@@ -81,6 +82,7 @@ export class CustomerSignupPageComponent implements OnInit {
     this.authService.userSignup(this.userSignup.value).subscribe({
       next: (response) => {
         console.log("Server response:", response);
+        this.toastr.success(response.message)
       },
       error: (error) => {
         console.error("Server error:", error);

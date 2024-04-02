@@ -1,5 +1,5 @@
 <main class="bg-color mt-5">
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap-2">
     <div class="">
       <img
         src="../../../assets/images/image 15.png"
@@ -40,8 +40,7 @@
                 id="email"
                 placeholder="Enter Your Email"
                 required
-                formControlName="userEmail"
-                autocomplete="username"
+                formControlName="email"
               />
             </div>
             <div class="input-group">
@@ -50,9 +49,8 @@
                 type="password"
                 id="password"
                 placeholder="Enter your password"
-                formControlName="userPwd"
+                formControlName="password"
                 required
-                autocomplete="new-password"
               />
             </div>
           </div>
@@ -62,7 +60,7 @@
               <input type="checkbox" id="terms" name="terms" required />
               <label for="terms">Remember Me</label>
             </div>
-            <span class="forgor-pwd">Forgot Password</span>
+            <span class="forgor-pwd" (click)="showPassword()">Forgot Password</span>
           </div>
           <div
             class="button-group d-flex justify-content-end align-items-center"

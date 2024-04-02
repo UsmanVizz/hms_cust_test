@@ -11,13 +11,21 @@ import {
 } from "@angular/forms";
 import { AuthServiceService } from "src/app/services/auth-service.service";
 import { ToastrService } from "ngx-toastr";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
+import { PasswordResetComponent } from "../../password-reset/password-reset.component";
 
 @Component({
   selector: "app-customer-login-page",
   templateUrl: "./customer-login-page.component.html",
   styleUrls: ["./customer-login-page.component.scss"],
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+  ],
 })
 export class CustomerLoginPageComponent implements OnInit {
   userLogin: FormGroup;
@@ -36,11 +44,12 @@ export class CustomerLoginPageComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthServiceService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private dialog: MatDialog
   ) {
     this.userLogin = this.fb.group({
-      userEmail: new FormControl("", [Validators.required, Validators.email]),
-      userPwd: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [Validators.required]),
     });
   }
 
@@ -50,16 +59,25 @@ export class CustomerLoginPageComponent implements OnInit {
     this.authService.userLoggedIn(this.userLogin.value).subscribe({
       next: (response) => {
         console.log("Server response:", response);
-        this.authService.login(response.userId, response.userName);
+        this.authService.login(
+          response.userId,
+          response.data.first_name + " " + response.data.last_name
+        );
         this.userLogin.reset();
         window.location.href = "/home";
 
-        this.toastr.success(`${response.userName} is successfully logged in`);
+        this.toastr.success(
+          `${response.data.first_name} ${response.data.last_name} is successfully logged in`
+        );
       },
       error: (error) => {
         // console.error("Server error:", error);
         this.toastr.error("Invalid Email or Password");
       },
     });
+  }
+
+  showPassword() {
+    this.dialog.open(PasswordResetComponent);
   }
 }

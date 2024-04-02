@@ -275,3 +275,10 @@ input:focus {
     gap: 10px;
   }
 }
+
+@media (max-width: 950px) {
+  .flex-wrap-2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+}
