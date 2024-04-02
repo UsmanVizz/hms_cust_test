@@ -14,6 +14,7 @@ import {
   MatDialogModule,
   MatDialogRef,
 } from "@angular/material/dialog";
+import { PasswordRecoveryService } from "src/app/services/password-recovery.service";
 
 @Component({
   selector: "app-verify-otp",
@@ -33,7 +34,8 @@ export class VerifyOtpComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<VerifyOtpComponent>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private passwordRecovery: PasswordRecoveryService
   ) {
     this.otpGroup = this.fb.group({
       otp1: new FormControl("", [Validators.required]),
@@ -63,6 +65,14 @@ export class VerifyOtpComponent implements OnInit {
     if (this.otpGroup.valid) {
       const concatenatedOTP = this.getConcatenatedOTP();
       console.log("Concatenated OTP:", concatenatedOTP);
+      this.passwordRecovery.verifyOtp(concatenatedOTP).subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
   }
 }

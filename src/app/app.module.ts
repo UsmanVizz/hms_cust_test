@@ -44,7 +44,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   hasProgressBar: true,
   textColor: "#FFFFFF",
   textPosition: "center-center",
-
 };
 
 @NgModule({

@@ -10,8 +10,13 @@ export class PasswordRecoveryService {
   constructor(private http: HttpClient) {}
 
   passwordUrl = environment.apiBaseUrl + environment.forGotPasswordApi;
+  verifyUrl = environment.apiBaseUrl + environment.verifyOtpApi;
 
   forgotPassword(obj: any): Observable<any> {
     return this.http.post(this.passwordUrl, obj);
+  }
+
+  verifyOtp(obj: any): Observable<any> {
+    return this.http.post(this.verifyUrl, obj);
   }
 }

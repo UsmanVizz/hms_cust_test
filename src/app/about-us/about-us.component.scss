@@ -42,7 +42,7 @@
 }
 
 .h3-f-t {
-  font-size: 31px;
+  font-size: 25px;
   font-family: "Poppins";
   font-weight: 900;
   line-height: 1.2;
@@ -138,5 +138,12 @@
     margin-top: auto;
     width: 100%;
     height: auto;
+  }
+
+  .flex-wrap-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center;
   }
 }
