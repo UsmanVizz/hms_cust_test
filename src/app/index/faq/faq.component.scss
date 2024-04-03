@@ -28,7 +28,7 @@
   border: none !important;
   font-size: 14px;
   font-weight: bold;
-  height: 35px;
+  height: 70px;
 }
 
 .span {
@@ -61,4 +61,12 @@ mat-icon {
   height: 18px;
   width: 18px;
   font-size: 18px;
+}
+
+
+@media (max-width:1075px) {
+  .flex-wrap-2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
 }

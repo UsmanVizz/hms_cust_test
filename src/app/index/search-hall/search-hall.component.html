@@ -25,11 +25,11 @@
               (click)="showCalendar()"
             >
               Calender
-              <mat-icon *ngIf="isCalendarOpen">keyboard_arrow_down</mat-icon>
-              <mat-icon *ngIf="!isCalendarOpen">keyboard_arrow_right</mat-icon>
+              <mat-icon *ngIf="!isCalendarOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="isCalendarOpen">keyboard_arrow_right</mat-icon>
             </button>
             <mat-card
-              *ngIf="openCalendar"
+              *ngIf="!openCalendar"
               class="demo-inline-calendar-card mt-1"
             >
               <mat-calendar [(selected)]="selected"></mat-calendar>
@@ -44,13 +44,13 @@
               (click)="showTime()"
             >
               Time
-              <mat-icon *ngIf="isTimeOpen">keyboard_arrow_down</mat-icon>
-              <mat-icon *ngIf="!isTimeOpen">keyboard_arrow_right</mat-icon>
+              <mat-icon *ngIf="!isTimeOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="isTimeOpen">keyboard_arrow_right</mat-icon>
             </button>
 
             <div
               class="d-flex flex-column justify-content-center"
-              *ngIf="openTime"
+              *ngIf="!openTime"
             >
               <mat-checkbox [(ngModel)]="morningChecked"
                 >Morning Time</mat-checkbox
@@ -93,13 +93,13 @@
               (click)="showRange()"
             >
               Price Range
-              <mat-icon *ngIf="isRangeOpen">keyboard_arrow_down</mat-icon>
-              <mat-icon *ngIf="!isRangeOpen">keyboard_arrow_right</mat-icon>
+              <mat-icon *ngIf="!isRangeOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="isRangeOpen">keyboard_arrow_right</mat-icon>
             </button>
 
             <div
               class="d-flex flex-column justify-content-center"
-              *ngIf="openPriceRange"
+              *ngIf="!openPriceRange"
             >
               <div style="display: flex; justify-content: space-between">
                 <label class="example-value-label">{{ valueStart }}</label>

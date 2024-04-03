@@ -82,6 +82,9 @@
 .icon-size {
   height: 120px;
   width: 120px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .laptop-img {
@@ -109,9 +112,9 @@
   border: 1px solid #fff;
 }
 
-.about-us__img {
-  width: calc(400px);
-}
+// .about-us__img {
+//   width: calc(400px);
+// }
 
 .descritpion {
   margin-top: 10px !important;

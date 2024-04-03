@@ -58,6 +58,7 @@ main {
 .star-rating {
   line-height: 32px;
   font-size: 1.25em;
+  display: flex;
 }
 
 .star-rating .fa-star {
@@ -155,8 +156,15 @@ main {
   font-family: "Poppins";
 }
 
+
+
 @media (max-width: 1200px) {
   .para-desc {
     border-radius: 10px !important;
+  }
+
+  .flex-wrapper-2 {
+    display: flex;
+    flex-wrap: wrap-reverse !important;
   }
 }

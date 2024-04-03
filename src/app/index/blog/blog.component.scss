@@ -2,25 +2,102 @@
   font-weight: bold !important;
   font-size: 30px !important;
   margin-bottom: 20px !important;
+  position: relative;
+  bottom: -55%;
 }
 
 .date-container {
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 60%;
   background-color: #fff;
   padding: 10px 14px;
   font-size: 14px;
   font-weight: 700;
   border-radius: 7px;
+  z-index: 5;
 }
 
 .title-decs__container {
   position: absolute;
   bottom: 0%;
+  left: 0%;
   padding: 20px 12px;
   background-image: linear-gradient(359deg, black, #0000008a, transparent);
   color: #fff;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  width: 100%;
+  height: 100%;
+  max-width: fit-content !important;
+}
+
+.p-s {
+  position: relative;
+  bottom: -85%;
+}
+
+
+.container {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: center;
+  background: linear-gradient(359deg, black, #0000008a, transparent);
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.overlay {
+  opacity: 1;
+}
+
+.alignText {
+  text-align: left !important;
+}
+
+.label-container {
+  background-color: white !important;
+  padding: 4px 12px !important;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 7px;
+  color: black;
 }

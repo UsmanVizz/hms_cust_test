@@ -13,7 +13,7 @@ main {
   font-weight: 500;
   font-family: "Poppins";
   padding-top: 25px;
-  // text-align: center;
+  text-align: center;
 }
 
 .marriage-title {
@@ -27,6 +27,7 @@ main {
   padding-bottom: 10px !important;
   margin-top: 10px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .state-btn {
@@ -65,8 +66,9 @@ main {
   font-size: 18px;
   font-weight: 500;
   border-radius: 40px;
-  padding: 10px 30px;
+  padding: 10px 50px;
   background-color: transparent;
+  margin-top: 30px;
 }
 
 .view-btn:hover {
@@ -101,16 +103,12 @@ main {
 }
 
 .img-overlay {
-  height: 300px;
-  width: 300px;
   background-color: #fb6f10;
   transform: rotate(75deg);
   border-radius: 20px;
 }
 
 .img-overlay-2 {
-  height: 300px;
-  width: 300px;
   background-color: #ffffff;
   transform: rotate(280deg);
   border-radius: 20px;
@@ -132,8 +130,34 @@ main {
   margin-bottom: 50px !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .p-marriage-title {
-    text-align: center;
+    font-size: 24px;
+    max-width: 310px;
   }
+
+  .marriage-title {
+    font-size: 24px;
+  }
+
+  .m-description {
+    max-width: 310px;
+  }
+
+  .flex-wrapper-2 {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
+
+@media (max-width:800px) {
+  .display-component {
+    display: none;
+  }
+}
+
+
+.container {
+  max-width: 90% !important;
 }

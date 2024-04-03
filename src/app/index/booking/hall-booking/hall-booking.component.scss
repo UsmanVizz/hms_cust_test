@@ -65,7 +65,7 @@ main {
   font-size: 18px;
   font-weight: 500;
   border-radius: 40px;
-  padding: 10px 30px;
+  padding: 10px 50px;
   background-color: transparent;
 }
 
@@ -102,4 +102,25 @@ main {
 
 .men-image {
   width: 400px;
+}
+
+@media (max-width: 850px) {
+  .p-marriage-title {
+    font-size: 24px;
+    max-width: 310px;
+  }
+
+  .marriage-title {
+    font-size: 24px;
+  }
+
+  .m-description {
+    max-width: 310px;
+  }
+}
+
+@media (max-width: 800px) {
+  .display-component {
+    display: none;
+  }
 }

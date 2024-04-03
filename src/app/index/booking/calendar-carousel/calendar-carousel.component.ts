@@ -15,7 +15,7 @@ export class CalendarCarouselComponent implements OnInit {
 
   value!: number;
 
-  rating: number = 0;
+  rating: number = 5;
 
   constructor(private router: Router) {
     this.updateDisplayedCards();

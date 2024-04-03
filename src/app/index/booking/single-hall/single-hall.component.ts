@@ -112,7 +112,6 @@ export class SingleHallComponent implements OnInit {
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.cards.length;
     this.updateDisplayedCards();
-    console.log("Sliding");
   }
 
   prevSlide() {

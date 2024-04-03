@@ -1,16 +1,23 @@
 <nav class="navbar navbar-expand-md bg-transparent py-3" data-bs-theme="dark">
-  <div class="container bg-light p-4">
+  <div class="container bg-light p-5">
     <a class="navbar-brand d-flex align-items-center ml-1" routerLink="/home"
       ><img src="../../../../assets/images/favicon.png" alt="Favourite Icon" />
       <span class="logo-title text-black">Hall Management System</span></a
-    ><button
+    >
+    <label
+      class="hamburger navbar-toggler"
       data-bs-toggle="collapse"
       data-bs-target="#navcol-5"
-      class="navbar-toggler"
     >
-      <span class="visually-hidden">Toggle navigation</span
-      ><span class="navbar-toggler-icon"></span>
-    </button>
+      <input type="checkbox" />
+      <svg viewBox="0 0 32 32">
+        <path
+          class="line line-top-bottom"
+          d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+        ></path>
+        <path class="line" d="M7 16 27 16"></path>
+      </svg>
+    </label>
     <div class="collapse navbar-collapse" id="navcol-5">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item mx-auto my-auto">

@@ -32,6 +32,7 @@ article {
 .star-rating {
   font-size: 1.25em;
   cursor: pointer;
+  display: flex;
 }
 
 .star-rating .fa-star {
@@ -43,7 +44,7 @@ article {
 }
 
 .p-marriage-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
   font-family: "Poppins";
   text-align: center;
@@ -51,7 +52,7 @@ article {
 
 .marriage-title {
   color: #fb6f10;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700 !important;
 }
 
@@ -237,6 +238,16 @@ li {
   .wrapper-container {
     display: flex !important;
     justify-content: center !important;
-    flex-wrap: wrap !important;
+    flex-wrap: wrap-reverse !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .h3-f-t {
+    font-size: 18px;
+  }
+
+  .marriage-title {
+    font-size: 20px;
   }
 }
