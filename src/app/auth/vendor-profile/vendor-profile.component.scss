@@ -162,3 +162,10 @@
     height: auto !important;
   }
 }
+
+@media (max-width:900px) {
+  .flex-wrap-2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

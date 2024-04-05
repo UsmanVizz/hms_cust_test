@@ -128,3 +128,10 @@ button:hover svg path {
   width: 50px !important;
   height: 50px !important;
 }
+
+@media (max-width:900px) {
+  .flex-wrap-2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
