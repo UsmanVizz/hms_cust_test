@@ -31,6 +31,7 @@ export class CalendarCarouselComponent implements OnInit {
     { imageUrl: "../../../../assets/images/image 17.jpg" },
     { imageUrl: "../../../../assets/images/image 18.jpg" },
     { imageUrl: "../../../../assets/images/image 19.jpg" },
+    { imageUrl: "../../../../assets/images/image 7.png" },
   ];
 
   @HostListener("window:resize", ["$event"])

@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ActivatedRoute, RouterModule } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { CalendarCarouselComponent } from "../booking/calendar-carousel/calendar-carousel.component";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatCardModule } from "@angular/material/card";
@@ -15,6 +15,7 @@ import {
 } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSliderModule } from "@angular/material/slider";
+import { DecoratorBookingComponent } from "../booking/decorator-booking/decorator-booking.component";
 
 @Component({
   selector: "app-search-hall",
@@ -33,6 +34,7 @@ import { MatSliderModule } from "@angular/material/slider";
     ReactiveFormsModule,
     MatCheckboxModule,
     MatSliderModule,
+    DecoratorBookingComponent
   ],
 })
 export class SearchHallComponent implements OnInit {
@@ -71,8 +73,11 @@ export class SearchHallComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.updateDisplayedCards();
+  }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -83,6 +88,10 @@ export class SearchHallComponent implements OnInit {
       console.log(params);
       this.title = params["type"];
     });
+
+    setInterval(() => {
+      this.nextSlide();
+    }, 2000);
   }
 
   showCalendar() {
@@ -128,5 +137,54 @@ export class SearchHallComponent implements OnInit {
     } else {
       this.openBudget = true;
     }
+  }
+
+  displayedCards: any[] = [];
+  currentIndex = 0;
+
+  value!: number;
+
+  rating: number = 5;
+
+ 
+
+
+
+  cards = [
+    { imageUrl: "../../../../assets/images/image 17.jpg" },
+    { imageUrl: "../../../../assets/images/image 18.jpg" },
+    { imageUrl: "../../../../assets/images/image 19.jpg" },
+  ];
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event: any) {
+    this.updateDisplayedCards();
+  }
+
+  private updateDisplayedCards() {
+    if (window.innerWidth < 769) {
+      this.displayedCards = [this.cards[this.currentIndex % this.cards.length]];
+    } else {
+      this.displayedCards = [this.cards[this.currentIndex % this.cards.length]];
+    }
+  }
+
+  setRating(value: number) {
+    this.rating = value;
+  }
+
+  bookNow() {
+    this.router.navigate(["single-hall"]);
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+    this.updateDisplayedCards();
+  }
+
+  prevSlide() {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+    this.updateDisplayedCards();
   }
 }

@@ -13,7 +13,7 @@
 .card-img-top {
   height: 290px;
   width: 290px;
-  object-fit: cover;
+  object-fit: cover !important;
   background-color: rgb(197, 197, 197) !important;
   border-radius: 15px;
 }
