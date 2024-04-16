@@ -103,14 +103,14 @@ span.mat-mdc-button-touch-target {
 
 .icon-group {
   height: 25px;
-  width: 25px;
+  width: 20px;
   cursor: pointer;
   margin-right: 20px;
 }
 
 .hamburger {
   cursor: pointer;
-  background-color: #fb6f10;
+  background-color: transparent;
 }
 
 .hamburger input {
@@ -126,7 +126,7 @@ span.mat-mdc-button-touch-target {
 
 .line {
   fill: none;
-  stroke: white;
+  stroke: #fb6f10;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -184,5 +184,11 @@ span.mat-mdc-button-touch-target {
 
   li {
     width: fit-content;
+  }
+}
+
+@media (max-width: 450px) {
+  .logo-title {
+    display: none;
   }
 }

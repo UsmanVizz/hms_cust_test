@@ -47,7 +47,9 @@ body {
   border-radius: 4px;
 }
 
-.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(
+    .mat-calendar-body-comparison-identical
+  ) {
   color: #ffffff;
   background-color: #f44435;
   font-weight: 700;
@@ -55,7 +57,8 @@ body {
 }
 
 .mat-calendar-body-selected.mat-calendar-body-today {
-  box-shadow: inset 0 0 0 1px var(--mat-datepicker-calendar-date-today-selected-state-outline-color);
+  box-shadow: inset 0 0 0 1px
+    var(--mat-datepicker-calendar-date-today-selected-state-outline-color);
 }
 
 .mat-accent {
@@ -177,7 +180,8 @@ ul {
 }
 
 .mat-accent .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
-.mat-accent .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+.mat-accent
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
   color: #fb6f10;
 }
 
@@ -405,7 +409,9 @@ html {
   justify-content: center;
 }
 
-.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs
+  > .mat-mdc-tab-header
+  .mat-mdc-tab {
   flex-grow: 1;
   font-weight: 900;
 }

@@ -14,7 +14,11 @@
       <span class="text-black-50"
         >Hey! Leave a message and we'll get back to you ASAP.</span
       >
-      <form class="d-flex flex-column gap-3 bg-light">
+      <form
+        class="d-flex flex-column gap-3 bg-light"
+        [formGroup]="contactUs"
+        (ngSubmit)="onSubmit()"
+      >
         <div class="input-group">
           <label for="name">Your Name*</label>
           <input
@@ -22,6 +26,7 @@
             id="name"
             class="contact-input"
             placeholder="Enter your full name"
+            formControlName="name"
           />
         </div>
         <div class="input-group">
@@ -29,19 +34,20 @@
           <input
             type="text"
             id="contact-no"
-            placeholder="Enter your full name"
+            placeholder="03xx xxxxxxx"
             class="contact-input"
+            formControlName="contactNo"
           />
         </div>
         <div class="input-group">
           <label for="massage">Message*</label>
           <textarea
-            name=""
             id="massage"
             cols="30"
             rows="5"
             class="contact-input"
             placeholder="Do you have any question?"
+            formControlName="message"
           ></textarea>
         </div>
         <div class="d-flex justify-content-between">
@@ -49,7 +55,14 @@
             <span class="text-black-50">You may also contact us at:</span>
             <h5 class="h5-f-t">+92312-6164111</h5>
           </div>
-          <button type="submit" class="view-btn view-btn-active">Send</button>
+          <button
+            type="submit"
+            class="view-btn view-btn-active"
+            [disabled]="contactUs.invalid"
+            [ngClass]="{ 'view-btn__disable': contactUs.invalid }"
+          >
+            Send
+          </button>
         </div>
       </form>
     </div>

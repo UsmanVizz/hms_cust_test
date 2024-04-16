@@ -57,8 +57,12 @@ main {
 }
 
 .photographer-container:hover svg path {
-  stroke: rgb(146, 146, 146);
-  fill: #ffffff;
+  stroke: rgb(255, 255, 255);
+  fill: #d6d2d2;
+}
+
+.rounded-color:hover svg path {
+  stroke: rgb(189, 189, 189) !important;
 }
 
 .icons {

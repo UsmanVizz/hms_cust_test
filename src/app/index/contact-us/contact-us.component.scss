@@ -61,6 +61,11 @@
   padding: 70px;
 }
 
+.view-btn__disable {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 950px) {
   .contact-input {
     width: auto !important;

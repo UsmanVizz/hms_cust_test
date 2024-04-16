@@ -40,12 +40,12 @@ main {
   padding: 0px 5px;
 }
 
-.state-btn:hover {
+.active {
   border-radius: 4px;
   border: none !important;
   border-bottom: 3px solid #fb6f10 !important;
   background-color: transparent !important;
-  color: #000000;
+  color: #000000 !important;
   font-weight: bold;
   padding: 0px 5px;
 }
@@ -151,13 +151,17 @@ main {
   }
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .display-component {
     display: none;
   }
 }
 
-
 .container {
   max-width: 90% !important;
 }
+
+.tab-pane.fade.show {
+    opacity: 1 !important;
+    border-bottom: none !important;
+  }

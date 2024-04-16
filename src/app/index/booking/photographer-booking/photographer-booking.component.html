@@ -49,76 +49,100 @@
     <div class="m-description">
       Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
     </div>
-    <!-- <div class="d-flex flex-wrap justify-content-center gap-5">
-      <button class="state-btn active-btn">Catering</button>
-      <button class="state-btn">Photographer</button>
-      <button class="state-btn">makeup Artist</button>
-      <button class="state-btn">Decor</button>
-      <button class="state-btn">Musician</button>
-      <button class="state-btn">Mehndi Artist</button>
-    </div> -->
 
-    <div>
-      <mat-tab-group class="d-flex flex-wrap justify-content-center">
-        <mat-tab label="Catering">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel></div
-        ></mat-tab>
-        <mat-tab label="Photographer">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel></div
-        ></mat-tab>
-        <mat-tab label="Makeup Artist">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel></div
-        ></mat-tab>
-        <mat-tab label="Decor">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel>
-          </div>
-        </mat-tab>
-        <mat-tab label="Musician">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel></div
-        ></mat-tab>
-        <mat-tab label="Mehndi Artist">
-          <div
-            class="d-flex justify-content-around mb-4 gap-4 flex-wrap card-container"
-          >
-            <app-calendar-carousel></app-calendar-carousel>
-            <app-calendar-carousel class="display-component"></app-calendar-carousel></div
-        ></mat-tab>
-      </mat-tab-group>
+    <ul class="nav nav-pills mb-3 d-flex gap-4" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link state-btn active"
+          id="pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-home"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="true"
+        >
+          Catering
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link state-btn"
+          id="pills-profile-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-profile"
+          type="button"
+          role="tab"
+          aria-controls="pills-profile"
+          aria-selected="false"
+        >
+          Photographer
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link state-btn"
+          id="pills-contact-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-contact"
+          type="button"
+          role="tab"
+          aria-controls="pills-contact"
+          aria-selected="false"
+        >
+          Makeup Artist
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link state-btn"
+          id="pills-title-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-title"
+          type="button"
+          role="tab"
+          aria-controls="pills-title"
+          aria-selected="false"
+        >
+          Decor
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <app-catering></app-catering>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab"
+      >
+        <app-calendar-carousel></app-calendar-carousel>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="pills-contact"
+        role="tabpanel"
+        aria-labelledby="pills-contact-tab"
+      >
+        <app-makeup-artist></app-makeup-artist>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="pills-title"
+        role="tabpanel"
+        aria-labelledby="pills-title-tab"
+      >
+        <app-calendar-carousel></app-calendar-carousel>
+      </div>
     </div>
 
-    <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Calendar Booking Container !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-    <!-- <div
-      class="d-flex justify-content-around mt-5 mb-4 gap-4 flex-wrap card-container"
-    >
-      <app-calendar-carousel></app-calendar-carousel>
-      <app-calendar-carousel></app-calendar-carousel>
-    </div> -->
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <button class="view-btn m-3">View All</button>
   </div>
-  <!-- <img
-    src="../../../assets/images/flower-bottom.png"
-    alt="Image Preview"
-    class="flower-bottom"
-  /> -->
 </main>
